@@ -48,15 +48,18 @@ public class Main {
     ResultSet rsUsers = conn.createStatement().executeQuery("SELECT * FROM User");
     System.out.println("Users:");
     while (rsUsers.next()) {
-      System.out.println("ID: " + rsUsers.getInt("id") + ", Name: " + rsUsers.getString("name"));
+      System.out.println("ID: " + rsUsers.getInt("id")
+              + ", Name: " + rsUsers.getString("name"));
     }
 
     ResultSet rsReviews = conn.createStatement().executeQuery("SELECT * FROM Review");
     System.out.println("Reviews:");
     while (rsReviews.next()) {
-      System.out.println("ID: " + rsReviews.getInt("id") + ", User ID: " + rsReviews.getInt("userId") +
-              ", Stars: " + rsReviews.getInt("stars") + ", Description: " + rsReviews.getString("description") +
-              ", Date: " + rsReviews.getDate("date"));
+      System.out.println("ID: " + rsReviews.getInt("id")
+              + ", User ID: " + rsReviews.getInt("userId")
+              + ", Stars: " + rsReviews.getInt("stars")
+              + ", Description: " + rsReviews.getString("description")
+              + ", Date: " + rsReviews.getDate("date"));
     }
   }
 }
